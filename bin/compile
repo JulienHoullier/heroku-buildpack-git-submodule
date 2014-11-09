@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
-echo '-----> Engaging submodule'
+echo '-----> Fetching submodules'
 
-cd $(dirname $0)/..
+cd $(dirname $1)
 unset GIT_DIR
 git submodule update --init --recursive
-
-heroku-buildpack-submodule-example-submodule/engage
