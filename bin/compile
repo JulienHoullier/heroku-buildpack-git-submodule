@@ -2,7 +2,8 @@
 
 echo '-----> Engaging submodule'
 
-cd $(dirname $0)/..
+cd $1
+pwd
 unset GIT_DIR
 mv gitmodules .gitmodules || true
 git submodule update --init --recursive
