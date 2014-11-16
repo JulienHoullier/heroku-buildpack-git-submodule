@@ -4,6 +4,5 @@ echo '-----> Engaging submodule'
 
 cd $(dirname $0)/..
 unset GIT_DIR
+mv gitmodules .gitmodules || true
 git submodule update --init --recursive
-
-heroku-buildpack-submodule-example-submodule/engage
