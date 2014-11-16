@@ -6,4 +6,5 @@ cd $1
 pwd
 unset GIT_DIR
 mv gitmodules .gitmodules || true
+git init
 git submodule update --init --recursive
