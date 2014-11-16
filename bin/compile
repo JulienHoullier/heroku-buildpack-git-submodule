@@ -7,4 +7,4 @@ pwd
 unset GIT_DIR
 mv gitmodules .gitmodules || true
 git init
-git submodule update --init --recursive
+git submodule update --init --recursive && echo 'git submodule updated'
