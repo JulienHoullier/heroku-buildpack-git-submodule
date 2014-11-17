@@ -1,9 +1,8 @@
-#!/usr/bin/env python
-
 import ConfigParser
 import io
 import sys
 import subprocess
+import shutil
 
 GIT = 'git'
 
@@ -34,6 +33,7 @@ def init():
     subprocess.check_call(args)
 
 def update(url, path):
+    shutil.rmtree(path, ignore_errors=True)
     args = [GIT, "submodule", "add", url, path]
     subprocess.check_call(args)
 
