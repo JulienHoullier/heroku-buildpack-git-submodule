@@ -2,9 +2,8 @@
 
 echo '-----> Engaging submodule'
 
+BINDIR=$(readlink -f $(dirname $0))
 cd $1
 pwd
 unset GIT_DIR
-mv gitmodules .gitmodules || true
-git init
-git submodule update --init --recursive && echo 'git submodule updated'
+${BINDIR}/git-submodule-update.py gitmodules
